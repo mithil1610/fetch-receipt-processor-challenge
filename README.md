@@ -10,7 +10,7 @@ You will need docker installed and running to run and execute this program
 ### Setting up Dev
 Here's a brief intro about what a developer must do in order to execute the project:
 ```
-git clone https://github.com/your/your-project.git
+git clone https://github.com/mithil1610/fetch-receipt-processor-challenge.git
 cd fetch-receipt-processor-challenge/
 docker build .
 docker run docker_image (Here docker_image is Docker Image Name or Docker Image Tag)
