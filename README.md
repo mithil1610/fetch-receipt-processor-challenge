@@ -12,8 +12,8 @@ Here's a brief intro about what a developer must do in order to execute the proj
 ```
 git clone https://github.com/mithil1610/fetch-receipt-processor-challenge.git
 cd fetch-receipt-processor-challenge/
-docker build .
-docker run docker_image_sha256 (Here docker_image_sha256 is Docker Image's SHA 256 or Docker Image Tag)
+docker image build -t fetch-receipt-processor-challenge .
+docker run -p 5000:5000 -d fetch-receipt-processor-challenge
 ```
 
 ## Summary of API Specification
