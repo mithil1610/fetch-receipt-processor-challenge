@@ -13,7 +13,7 @@ Here's a brief intro about what a developer must do in order to execute the proj
 git clone https://github.com/mithil1610/fetch-receipt-processor-challenge.git
 cd fetch-receipt-processor-challenge/
 docker build .
-docker run docker_image (Here docker_image is Docker Image Name or Docker Image Tag)
+docker run docker_image_sha256 (Here docker_image_sha256 is Docker Image's SHA 256 or Docker Image Tag)
 ```
 
 ## Summary of API Specification
