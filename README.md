@@ -13,8 +13,37 @@ Here's a brief intro about what a developer must do in order to execute the proj
 git clone https://github.com/mithil1610/fetch-receipt-processor-challenge.git
 cd fetch-receipt-processor-challenge/
 docker image build -t fetch-receipt-processor-challenge .
-docker run -p 5000:5000 -d fetch-receipt-processor-challenge
+docker run -p 5000:5000 fetch-receipt-processor-challenge
 ```
+If you encounter an error regarding port number already allocated then you will have to change the port number in code at two instances in Dockerfile and at the last second line of app.py file, you can update the port number and the will have to follow the above steps again.
+
+Now for executing the program you can use POSTMAN, you will have to test two endpoints first http://127.0.0.1:5000/receipts/process where 5000 is the port number and 127.0.0.1 is the host name, for this you will do a POST request and will need to pass a request with following or similar JSON body 
+```
+{
+  "retailer": "M&M Corner Market",
+  "purchaseDate": "2022-03-20",
+  "purchaseTime": "14:33",
+  "items": [
+    {
+      "shortDescription": "Gatorade",
+      "price": "2.25"
+    },{
+      "shortDescription": "Gatorade",
+      "price": "2.25"
+    },{
+      "shortDescription": "Gatorade",
+      "price": "2.25"
+    },{
+      "shortDescription": "Gatorade",
+      "price": "2.25"
+    }
+  ],
+  "total": "9.00"
+}
+```
+In return you will get a <receipt_id> which you will pass in the second request which will be a GET request like the following http://127.0.0.1:5000/receipts/<receipt_id>/points
+
+You can run the tests by executing the test file, or by running python -m unittest unit-test.py in the command line.
 
 ## Summary of API Specification
 
